@@ -1,0 +1,105 @@
+PRE-REQUEST
+
+const newrandomName = pm.variables.replaceIn("{{$randomCurrencyName}}")
+pm.collectionVariables.set("cardrandomName", newrandomName)
+
+//const newrandomDesc = pm.variables.replaceIn("{{$randomPhrase}}")
+//pm.collectionVariables.set("cardrandomDesc", newrandomDesc)
+
+
+//pm.variables.get("$randomPhrase")
+
+const modificateRandomName = pm.variables.replaceIn("{{$randomCurrencyName}}")
+pm.collectionVariables.set("cardModficaterandomName", modificateRandomName)
+
+const modificateRandomDesc = pm.variables.replaceIn("{{$randomLoremParagraph}}")
+pm.collectionVariables.set("cardModficaterandomDesc", modificateRandomDesc)
+
+
+
+TEST #01
+
+pm.test("Precondicion: Lista BACKLOG existente",()=>{
+pm.response.to.have.status (200)
+})
+
+const body = pm.response.json()
+pm.test("La Lista si corresponde al nombre BACKLOG",()=>
+    pm.expect(body.name).to.include("BACKLOG")
+)
+
+
+
+
+const body = pm.response.json()
+
+pm.test("Debería estar la creacion de la Card en la Lista BACKLOG",()=>
+    pm.expect(body.idList).to.eql(pm.environment.get("ListA"))
+)
+pm.test("Nombre de la Card debería ser igual al ingresado previamente",()=>
+    pm.expect(body.name).to.eql(pm.collectionVariables.get("cardrandomName"))
+)
+
+const idCardA = body.id
+pm.collectionVariables.set("idCardAA", idCardA)
+
+
+
+
+const body = pm.response.json()
+const randomname = pm.collectionVariables.get("cardrandomname")
+const randomDesc = pm.collectionVariables.get("cardrandomDesc")
+
+
+pm.test("Nombre correcto modificado de la Card",()=>
+    pm.expect(body.name).to.eql(randomName)
+)
+pm.test("Validar Descripcion de la carta actualizada", ()=>
+    pm.expect(body.desc).to.eql(randomDesc)
+    )
+
+
+
+
+const body = pm.response.json()
+
+const NewNameRandom = pm.collectionVariables.get("cardModficaterandomName")
+pm.test("el Nombre si se modifico",()=>
+    pm.expect(body.name).to.eql(NewNameRandom)
+)
+const modificateRandomDesc= pm.collectionVariables.get("cardModficaterandomDesc")
+pm.test("Se actualizo la Descripicion",()=>
+    pm.expect(body.desc).to.eql(modificateRandomDesc)
+)
+
+const body = pm.response.json()
+const idListB = pm.environment.get("ListB")
+pm.test("Se movio a la Lista ACTIVE", ()=>
+    pm.expect(body.idList).to.eql(idListB)
+
+const body = pm.response.json()
+const archivado = body.closed
+pm.test("Si se archivo la tarjeta", ()=>
+    pm.expect(archivado).to.eql(true)
+)
+    pm.test("La Tarjeta no se ve en el Tablero pero si esta en el Workspace", ()=>
+        pm.response.to.have.status(200)
+    )
+
+
+
+TEST #02
+
+const body = pm.response.json()
+pm.test("el nombre si se modifico",()=>
+    pm.expect(body.name).to.eql("CESAR")
+)
+
+
+
+const idCard = body.id
+pm.collectionVariables.set("idCardB", idCard) 
+
+pm.test("La Card si existe en el Tablero antes de elminarse", ()=>
+    pm.response.to.have.status(200)
+)
