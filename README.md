@@ -8,4 +8,6 @@ Jornada de Prácticas en UPEX Bootcamp 🌟
     ✔ Test Strategy
       ✔ Test Design
         ✔ Manejo de Postman para las pruebas API
+        
+        En las archivos adjuntos está desglosado la US con el desarrollo del proceso QA. Check it out!
     
