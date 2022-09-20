@@ -9,5 +9,8 @@ Puntos relevantes del desarrollo de esta US
       Test Design
         Manejo de Postman para las pruebas API
     
-
+dizzy About Me:
+man_technologist I`m FullStack Javascript Developer
+robot I`m looking to collaborate on tests automation
+blue_heart I`m currently learning javascript typescript cypress
 
