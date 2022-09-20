@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://upexsprint11.atlassian.net/si/jira.issueviews:issue-html/UPEX-9134/UPEX-9134.html -->
+<html class="webkit chrome"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>[#UPEX-9134] [Cesar] - US {API} Trello | Cards | Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero</title>
+    
+            
+        <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\"\"";
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-rest:curl.cross-origin-resources"]="false";
+WRM._unparsedData["jira.webresources:feature-flags.feature-flag-data"]="{\"enabled-feature-keys\":[\"connect.no-applinks\",\"nps.survey.inline.dialog\",\"atlassian.aui.raphael.disabled\"],\"feature-flag-states\":{\"jira.feature.flag.board.issue.modal.labs\":true,\"com.atlassian.jira.plugins.mail.internal\":false,\"com.atlassian.jira.feature.flag.for.TestFeatureFlagResource\":false,\"jira.feature.rest.single.step.avatar.upload\":true,\"jira.ondemand.maintain.trusted.apps\":true}}";
+WRM._unparsedData["com.atlassian.jira.jira-client-analytics-plugin:analytics-context-provider.client-analytic-descriptors"]="{\"analyticsResource\":{\"jira-core\":{\"events\":{\"issue.comment.added\":{\"trigger\":\"click #issue-comment-add-submit\",\"properties\":{\"comment-length\":\"value.length #issue-comment-add #comment\"}}}}},\"tenantId\":\"b6c2762e-eef0-490d-aa32-87719ae7f690\",\"aid\":\"70121:2687a712-2d36-47b2-a4b7-2596c2e9a18f\",\"env\":\"prod\"}";
+WRM._unparsedData["jira.webresources:default-comment-security-level.DefaultCommentSecurityLevelHelpLink"]="{\"extraClasses\":\"default-comment-level-help\",\"title\":\"Commenting on an Issue\",\"url\":\"https://confluence.atlassian.com/display/JIRASOFTWARECLOUD/Editing+and+collaborating+on+issues#Editingandcollaboratingonissues-addcommentsCommentingonissues\",\"isLocal\":false}";
+WRM._unparsedData["jira.webresources:key-commands.shortcuts"]="[{\"moduleKey\":\"go-to-dashboard-kb-shortcut\",\"keys\":[[\"g\",\"d\"]],\"context\":\"global\",\"op\":\"goTo\",\"param\":\"/secure/Dashboard.jspa\"},{\"moduleKey\":\"greenhopper-gh-shortcut\",\"keys\":[[\"g\",\"h\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"gh.app.globalkeyboardshortcuts.goToAgile();\"},{\"moduleKey\":\"browse-project-kb-shortcut\",\"keys\":[[\"g\",\"p\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"var elem = jQuery(\\\"#browse_link\\\");\\n                if (elem.length \u003e 0) {\\n                    window.location.href = elem.attr(\\\"href\\\");\\n                }\"},{\"moduleKey\":\"greenhopper-agile-shortcut\",\"keys\":[[\"g\",\"a\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"gh.app.globalkeyboardshortcuts.goToAgile();\"},{\"moduleKey\":\"issue-navigator-kb-shortcut\",\"keys\":[[\"g\",\"i\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"var elem = jQuery(\\\"#find_link\\\");\\n                if (elem.length \u003e 0) {\\n                    window.location.href = elem.attr(\\\"href\\\");\\n                }\"},{\"moduleKey\":\"admin.quicksearch.dialog.shortcut\",\"keys\":[[\"g\",\"g\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"JIRA.Shifter.show();\"},{\"moduleKey\":\"quicksearch\",\"keys\":[[\"/\"]],\"context\":\"global\",\"op\":\"moveToAndFocus\",\"param\":\"#quickSearchInput, #admin-quick-nav-field\"},{\"moduleKey\":\"create.issue\",\"keys\":[[\"c\"]],\"context\":\"global\",\"op\":\"moveToAndClick\",\"param\":\"#header .create-issue\"},{\"moduleKey\":\"shifter\",\"keys\":[[\".\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"JIRA.Shifter.show();\"},{\"moduleKey\":\"help\",\"keys\":[[\"?\"]],\"context\":\"global\",\"op\":\"click\",\"param\":\"#keyshortscuthelp\"}]";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/batch.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/com.atlassian.auiplugin_aui-labels.css" data-wrm-key="com.atlassian.auiplugin:aui-labels" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/jira.webresources_theme-adg3.css" data-wrm-key="jira.webresources:theme-adg3" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/jira.webresources_global-static.css" data-wrm-key="jira.webresources:global-static" data-wrm-batch-type="resource" media="all">
+<script type="text/javascript" src="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/batch.js.descarga" data-wrm-key="_super" data-wrm-batch-type="context" data-initially-rendered=""></script><style type="text/css"></style><style type="text/css"></style>
+<script type="text/javascript" src="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/jira.webresources_global-static.js.descarga" data-wrm-key="jira.webresources:global-static" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["_wrmBatchContents"]="{\"js\":{\"_super\":[\"jira.webresources:es6-promise\",\"jira.webresources:promise-polyfill\",\"jira.webresources:usertiming-polyfill\",\"jira.webresources:almond\",\"jira.webresources:almond-analytics\",\"com.atlassian.auiplugin:aui-reset\",\"com.atlassian.auiplugin:aui-page-typography\",\"com.atlassian.auiplugin:aui-avatars\",\"com.atlassian.auiplugin:aui-page-layout\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:data\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path\",\"com.atlassian.auiplugin:ajs-contextpath\",\"com.atlassian.plugins.jquery:jquery-1.7.2\",\"com.atlassian.plugins.jquery:jquery\",\"com.atlassian.auiplugin:jquery-lib\",\"com.atlassian.auiplugin:jquery-compatibility\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-console\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-jquery\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-create-element\",\"com.atlassian.auiplugin:internal-object-assign-4.0.1-index\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-globalize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-deprecation\",\"com.atlassian.auiplugin:aui-deprecation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-custom-event\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-constants\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-version\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-globals\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-data\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-mutation-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-utils\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-registry\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-lifecycle\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-fix-ie-innerhtml\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-document-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-skate\",\"com.atlassian.auiplugin:internal-tether-0.6.5-tether\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-version\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-prevent-default\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-stop-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-index-of\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-contains\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-include\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-toggle-class-name\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-current\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-clipped\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-params\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-populate-parameters\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-log\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-to-init\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-firebug\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-clone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-alphanum\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-on-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unbind-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-filter-by-search\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-debounce\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unique-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-add-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-forms\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-setup\",\"com.atlassian.auiplugin:deprecated-legacy-ajs-file\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-format\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-animation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-blanket\",\"com.atlassian.auiplugin:aui-core\",\"com.atlassian.auiplugin:internal-basic-css\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-plugins-jquery-aop\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-drop-down\",\"com.atlassian.auiplugin:dropdown\",\"com.atlassian.auiplugin:icons\",\"com.atlassian.auiplugin:table\",\"com.atlassian.auiplugin:internal-form-css\",\"com.atlassian.auiplugin:internal-message-css\",\"com.atlassian.auiplugin:ajs-gadgets-base\",\"com.atlassian.auiplugin:toolbar\",\"com.atlassian.auiplugin:aui-buttons\",\"com.atlassian.auiplugin:aui-toolbar2\",\"com.atlassian.soy.soy-template-plugin:soy-deps\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-widget\",\"com.atlassian.auiplugin:internal-aui-widget\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-i18n-aui\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-i18n\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-skate\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-navigation\",\"com.atlassian.auiplugin:aui-navigation\",\"com.atlassian.auiplugin:aui-experimental-iconfont\",\"com.atlassian.auiplugin:aui-header-unresponsive\",\"com.atlassian.auiplugin:internal-skatejs-template-html-0.0.0-dist-template-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-header-create-header\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-header\",\"com.atlassian.auiplugin:aui-header\",\"com.atlassian.auiplugin:aui-page-header\",\"com.atlassian.auiplugin:aui-page-suite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-key-code\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer\",\"com.atlassian.auiplugin:aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer-manager\",\"com.atlassian.auiplugin:keycode\",\"com.atlassian.auiplugin:aui-layer-manager\",\"com.atlassian.auiplugin:layer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-alignment\",\"com.atlassian.auiplugin:aui-alignment\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-browser\",\"com.atlassian.auiplugin:internal-aui-browser\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-state\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dropdown2\",\"com.atlassian.auiplugin:aui-dropdown2\",\"com.atlassian.auiplugin:internal-fancy-file-input-2.0.1-dist-fancy-file-input\",\"com.atlassian.auiplugin:internal-src-js-aui-fancy-file-input\",\"com.atlassian.auiplugin:fancy-file-input\",\"com.atlassian.auiplugin:hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dialog\",\"com.atlassian.auiplugin:dialog\",\"com.atlassian.auiplugin:internal-css.escape-1.5.0-css-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog\",\"com.atlassian.auiplugin:internal-inline-dialog-common\",\"com.atlassian.auiplugin:inline-dialog\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-template\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-messages\",\"com.atlassian.auiplugin:message\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tabs\",\"com.atlassian.auiplugin:tabs\",\"com.atlassian.auiplugin:jquery-ui-core-1.8.24-patched\",\"com.atlassian.auiplugin:jquery-ui-core\",\"com.atlassian.auiplugin:internal-jquery-ui-partial\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-moveto\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-underscorejs-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-when-i-type\",\"com.atlassian.auiplugin:internal-keyboardshortcuts\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-cookie\",\"com.atlassian.auiplugin:cookie\",\"com.atlassian.auiplugin:template\",\"com.atlassian.auiplugin:event\",\"com.atlassian.auiplugin:internal-ajs-no-context-path\",\"com.atlassian.auiplugin:ajs\",\"com.atlassian.auiplugin:jquery-ui\",\"com.atlassian.plugin.jslibs:jquery.textoverflow-0.7.4\",\"com.atlassian.plugin.jslibs:jquery.pjax-2011.07.10\",\"com.atlassian.plugin.jslibs:jquery.lazyload-1.8.0\",\"com.atlassian.plugin.jslibs:jquery.flot-0.7\",\"com.atlassian.plugin.jslibs:jquery.effects-1.8rc3\",\"com.atlassian.plugin.jslibs:jquery.dragtable-2.0.4\",\"com.atlassian.plugin.jslibs:jquery.serializeobject-0.2\",\"com.atlassian.plugin.jslibs:jquery.scrollintoview-1.8\",\"jira.webresources:jquery\",\"jira.webresources:aui-core-amd-shim\",\"com.atlassian.auiplugin:aui-badge\",\"com.atlassian.auiplugin:aui-lozenge\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-spin-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-spin\",\"com.atlassian.auiplugin:aui-spinner\",\"com.atlassian.auiplugin:aui-experimental-spinner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-amdify\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-flag\",\"com.atlassian.auiplugin:aui-flag\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:curl\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:require-handler-v2\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:web-resource-manager\",\"com.atlassian.plugin.jslibs:skate-0.12.6\",\"jira.webresources:skate\",\"jira.webresources:icons\",\"jira.webresources:jira-logger\",\"jira.webresources:deprecator\",\"jira.webresources:legacy-namespacing\",\"com.atlassian.auiplugin:ajs-underscorejs\",\"jira.webresources:ajs-underscorejs-amd-shim\",\"jira.webresources:jira-metadata\",\"jira.webresources:aui-extensions\",\"jira.webresources:feature-flags\",\"jira.webresources:jira-events\",\"jira.webresources:jira-formatter\",\"jira.webresources:browser-properties\",\"jira.webresources:top-same-origin-window\",\"jira.webresources:util-lite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-backbone-backbone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-backbone\",\"com.atlassian.auiplugin:ajs-backbone\",\"jira.webresources:ajs-backbone-amd-shim\",\"jira.webresources:number-formatter\",\"jira.webresources:util\",\"jira.webresources:content-retrievers\",\"jira.webresources:list-styles\",\"jira.webresources:inline-layer\",\"jira.webresources:list\",\"jira.webresources:dropdown\",\"jira.webresources:issue-table-adg3\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tipsy\",\"com.atlassian.auiplugin:aui-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tooltip\",\"com.atlassian.auiplugin:aui-tooltips\",\"com.atlassian.auiplugin:aui-experimental-tooltips\",\"com.atlassian.plugins.issue-status-plugin:issue-status-resources\",\"jira.webresources:issue-statuses\",\"jira.webresources:issue-table\",\"jira.webresources:select-model\",\"jira.webresources:general-configuration\",\"com.atlassian.auiplugin:aui-experimental-soy-templates\",\"jira.webresources:js-soy-templates\",\"jira.webresources:page-loading-indicator\",\"jira.webresources:messages\",\"jira.webresources:jira-dialog-core\",\"com.atlassian.jira.jira-issue-nav-plugin:issues-api\",\"com.atlassian.jira.jira-issue-nav-plugin:issuenav-legacy\",\"jira.webresources:jira-issuenavigator\",\"jira.webresources:jira-dialog-config\",\"jira.webresources:set-focus\",\"jira.webresources:select-pickers\",\"jira.webresources:jira-analytics-amd\",\"jira.webresources:trigger-custom-event\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client-library\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-context-provider\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-events-transformers\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client\",\"jira.webresources:shifter\",\"com.atlassian.jira.jira-npmbridge-plugin:atlassian-spa-iframe-amd\",\"com.atlassian.plugins.browser.metrics.browser-metrics-plugin:api\",\"com.atlassian.jira.jira-atlaskit-plugin:sidebar\",\"com.atlassian.jira.jira-atlaskit-plugin:forge\",\"com.atlassian.jira.jira-atlaskit-plugin:container-api\",\"jira.webresources:inline-attach\",\"jira.webresources:dialogs\",\"jira.webresources:default-comment-security-level\",\"jira.webresources:dropdown-select\",\"jira.webresources:user-management\",\"jira.webresources:mentions-base\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-progressive-data-set\",\"com.atlassian.auiplugin:aui-experimental-data-handlers\",\"jira.webresources:data-sets\",\"jira.webresources:mentions-feature\",\"jira.webresources:mentions\",\"jira.webresources:jira-edition\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-banner\",\"com.atlassian.auiplugin:aui-banner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-trigger\",\"com.atlassian.auiplugin:aui-trigger\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-attributes\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-enforcer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog2\",\"com.atlassian.auiplugin:aui-inline-dialog2\",\"jira.webresources:keyboard-shortcut-toggle\",\"jira.webresources:assignee-picker\",\"jira.webresources:jira-global\",\"jira.webresources:key-commands\",\"jira.webresources:header\",\"jira.webresources:superbatch-default\",\"_context:_super\"]},\"css\":{\"_super\":[\"jira.webresources:es6-promise\",\"jira.webresources:promise-polyfill\",\"jira.webresources:usertiming-polyfill\",\"jira.webresources:almond\",\"jira.webresources:almond-analytics\",\"com.atlassian.auiplugin:aui-reset\",\"com.atlassian.auiplugin:aui-page-typography\",\"com.atlassian.auiplugin:aui-avatars\",\"com.atlassian.auiplugin:aui-page-layout\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:data\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path\",\"com.atlassian.auiplugin:ajs-contextpath\",\"com.atlassian.plugins.jquery:jquery-1.7.2\",\"com.atlassian.plugins.jquery:jquery\",\"com.atlassian.auiplugin:jquery-lib\",\"com.atlassian.auiplugin:jquery-compatibility\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-console\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-jquery\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-create-element\",\"com.atlassian.auiplugin:internal-object-assign-4.0.1-index\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-globalize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-deprecation\",\"com.atlassian.auiplugin:aui-deprecation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-custom-event\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-constants\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-version\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-globals\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-data\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-mutation-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-utils\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-registry\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-lifecycle\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-fix-ie-innerhtml\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-document-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-skate\",\"com.atlassian.auiplugin:internal-tether-0.6.5-tether\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-version\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-prevent-default\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-stop-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-index-of\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-contains\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-include\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-toggle-class-name\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-current\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-clipped\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-params\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-populate-parameters\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-log\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-to-init\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-firebug\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-clone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-alphanum\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-on-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unbind-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-filter-by-search\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-debounce\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unique-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-add-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-forms\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-setup\",\"com.atlassian.auiplugin:deprecated-legacy-ajs-file\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-format\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-animation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-blanket\",\"com.atlassian.auiplugin:aui-core\",\"com.atlassian.auiplugin:internal-basic-css\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-plugins-jquery-aop\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-drop-down\",\"com.atlassian.auiplugin:dropdown\",\"com.atlassian.auiplugin:icons\",\"com.atlassian.auiplugin:table\",\"com.atlassian.auiplugin:internal-form-css\",\"com.atlassian.auiplugin:internal-message-css\",\"com.atlassian.auiplugin:ajs-gadgets-base\",\"com.atlassian.auiplugin:toolbar\",\"com.atlassian.auiplugin:aui-buttons\",\"com.atlassian.auiplugin:aui-toolbar2\",\"com.atlassian.soy.soy-template-plugin:soy-deps\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-widget\",\"com.atlassian.auiplugin:internal-aui-widget\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-i18n-aui\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-i18n\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-skate\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-navigation\",\"com.atlassian.auiplugin:aui-navigation\",\"com.atlassian.auiplugin:aui-experimental-iconfont\",\"com.atlassian.auiplugin:aui-header-unresponsive\",\"com.atlassian.auiplugin:internal-skatejs-template-html-0.0.0-dist-template-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-header-create-header\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-header\",\"com.atlassian.auiplugin:aui-header\",\"com.atlassian.auiplugin:aui-page-header\",\"com.atlassian.auiplugin:aui-page-suite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-key-code\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer\",\"com.atlassian.auiplugin:aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer-manager\",\"com.atlassian.auiplugin:keycode\",\"com.atlassian.auiplugin:aui-layer-manager\",\"com.atlassian.auiplugin:layer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-alignment\",\"com.atlassian.auiplugin:aui-alignment\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-browser\",\"com.atlassian.auiplugin:internal-aui-browser\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-state\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dropdown2\",\"com.atlassian.auiplugin:aui-dropdown2\",\"com.atlassian.auiplugin:internal-fancy-file-input-2.0.1-dist-fancy-file-input\",\"com.atlassian.auiplugin:internal-src-js-aui-fancy-file-input\",\"com.atlassian.auiplugin:fancy-file-input\",\"com.atlassian.auiplugin:hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dialog\",\"com.atlassian.auiplugin:dialog\",\"com.atlassian.auiplugin:internal-css.escape-1.5.0-css-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog\",\"com.atlassian.auiplugin:internal-inline-dialog-common\",\"com.atlassian.auiplugin:inline-dialog\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-template\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-messages\",\"com.atlassian.auiplugin:message\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tabs\",\"com.atlassian.auiplugin:tabs\",\"com.atlassian.auiplugin:jquery-ui-core-1.8.24-patched\",\"com.atlassian.auiplugin:jquery-ui-core\",\"com.atlassian.auiplugin:internal-jquery-ui-partial\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-moveto\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-underscorejs-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-when-i-type\",\"com.atlassian.auiplugin:internal-keyboardshortcuts\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-cookie\",\"com.atlassian.auiplugin:cookie\",\"com.atlassian.auiplugin:template\",\"com.atlassian.auiplugin:event\",\"com.atlassian.auiplugin:internal-ajs-no-context-path\",\"com.atlassian.auiplugin:ajs\",\"com.atlassian.auiplugin:jquery-ui\",\"com.atlassian.plugin.jslibs:jquery.textoverflow-0.7.4\",\"com.atlassian.plugin.jslibs:jquery.pjax-2011.07.10\",\"com.atlassian.plugin.jslibs:jquery.lazyload-1.8.0\",\"com.atlassian.plugin.jslibs:jquery.flot-0.7\",\"com.atlassian.plugin.jslibs:jquery.effects-1.8rc3\",\"com.atlassian.plugin.jslibs:jquery.dragtable-2.0.4\",\"com.atlassian.plugin.jslibs:jquery.serializeobject-0.2\",\"com.atlassian.plugin.jslibs:jquery.scrollintoview-1.8\",\"jira.webresources:jquery\",\"jira.webresources:aui-core-amd-shim\",\"com.atlassian.auiplugin:aui-badge\",\"com.atlassian.auiplugin:aui-lozenge\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-spin-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-spin\",\"com.atlassian.auiplugin:aui-spinner\",\"com.atlassian.auiplugin:aui-experimental-spinner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-amdify\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-flag\",\"com.atlassian.auiplugin:aui-flag\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:curl\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:require-handler-v2\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:web-resource-manager\",\"com.atlassian.plugin.jslibs:skate-0.12.6\",\"jira.webresources:skate\",\"jira.webresources:icons\",\"jira.webresources:jira-logger\",\"jira.webresources:deprecator\",\"jira.webresources:legacy-namespacing\",\"com.atlassian.auiplugin:ajs-underscorejs\",\"jira.webresources:ajs-underscorejs-amd-shim\",\"jira.webresources:jira-metadata\",\"jira.webresources:aui-extensions\",\"jira.webresources:feature-flags\",\"jira.webresources:jira-events\",\"jira.webresources:jira-formatter\",\"jira.webresources:browser-properties\",\"jira.webresources:top-same-origin-window\",\"jira.webresources:util-lite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-backbone-backbone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-backbone\",\"com.atlassian.auiplugin:ajs-backbone\",\"jira.webresources:ajs-backbone-amd-shim\",\"jira.webresources:number-formatter\",\"jira.webresources:util\",\"jira.webresources:content-retrievers\",\"jira.webresources:list-styles\",\"jira.webresources:inline-layer\",\"jira.webresources:list\",\"jira.webresources:dropdown\",\"jira.webresources:issue-table-adg3\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tipsy\",\"com.atlassian.auiplugin:aui-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tooltip\",\"com.atlassian.auiplugin:aui-tooltips\",\"com.atlassian.auiplugin:aui-experimental-tooltips\",\"com.atlassian.plugins.issue-status-plugin:issue-status-resources\",\"jira.webresources:issue-statuses\",\"jira.webresources:issue-table\",\"jira.webresources:select-model\",\"jira.webresources:general-configuration\",\"com.atlassian.auiplugin:aui-experimental-soy-templates\",\"jira.webresources:js-soy-templates\",\"jira.webresources:page-loading-indicator\",\"jira.webresources:messages\",\"jira.webresources:jira-dialog-core\",\"com.atlassian.jira.jira-issue-nav-plugin:issues-api\",\"com.atlassian.jira.jira-issue-nav-plugin:issuenav-legacy\",\"jira.webresources:jira-issuenavigator\",\"jira.webresources:jira-dialog-config\",\"jira.webresources:set-focus\",\"jira.webresources:select-pickers\",\"jira.webresources:jira-analytics-amd\",\"jira.webresources:trigger-custom-event\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client-library\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-context-provider\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-events-transformers\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client\",\"jira.webresources:shifter\",\"com.atlassian.jira.jira-npmbridge-plugin:atlassian-spa-iframe-amd\",\"com.atlassian.plugins.browser.metrics.browser-metrics-plugin:api\",\"com.atlassian.jira.jira-atlaskit-plugin:sidebar\",\"com.atlassian.jira.jira-atlaskit-plugin:forge\",\"com.atlassian.jira.jira-atlaskit-plugin:container-api\",\"jira.webresources:inline-attach\",\"jira.webresources:dialogs\",\"jira.webresources:default-comment-security-level\",\"jira.webresources:dropdown-select\",\"jira.webresources:user-management\",\"jira.webresources:mentions-base\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-progressive-data-set\",\"com.atlassian.auiplugin:aui-experimental-data-handlers\",\"jira.webresources:data-sets\",\"jira.webresources:mentions-feature\",\"jira.webresources:mentions\",\"jira.webresources:jira-edition\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-banner\",\"com.atlassian.auiplugin:aui-banner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-trigger\",\"com.atlassian.auiplugin:aui-trigger\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-attributes\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-enforcer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog2\",\"com.atlassian.auiplugin:aui-inline-dialog2\",\"jira.webresources:keyboard-shortcut-toggle\",\"jira.webresources:assignee-picker\",\"jira.webresources:jira-global\",\"jira.webresources:key-commands\",\"jira.webresources:header\",\"jira.webresources:superbatch-default\",\"_context:_super\"]}}";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://upexsprint11.atlassian.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+<script type="text/javascript" charset="utf-8" src="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/batch.js(1).descarga"></script><script type="text/javascript" charset="utf-8" src="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/batch.js(2).descarga"></script><script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+<body data-aui-version="6.0.5">
+<header id="previous-view">
+    <nav class="aui-toolbar">
+        <div class="toolbar-split toolbar-split-right">
+            <ul class="toolbar-group">
+                <li class="toolbar-item">
+                    <a href="https://upexsprint11.atlassian.net/browse/UPEX-9134" class="toolbar-trigger">Volver a la vista previa</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tbody><tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [UPEX-9134]&nbsp;<a href="https://upexsprint11.atlassian.net/browse/UPEX-9134">[Cesar] - US {API} Trello | Cards | Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero</a>
+            <span class="subText">
+               Creada: 23/jun/22                   &nbsp;Actualizada: 05/jul/22
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Estado:</b></td>
+        <td width="80%">En curso</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Proyecto:</b></td>
+        <td width="80%"><a href="https://upexsprint11.atlassian.net/secure/BrowseProject.jspa?id=10010">UPEX BOOTCAMP</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                                        <a title="Trello API - API de Trello" href="https://upexsprint11.atlassian.net/issues/?jql=project%3D10010%20AND%20%22component%22%3D10300%20ORDER%20BY%20priority%20ASC">Trello API</a>                        </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versiones afectadas:</b></td>
+            <td>
+                            Ninguno
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versiones corregidas:</b></td>
+            <td>
+                            Ninguno
+                </td>
+    </tr>
+    
+    </tbody></table>
+
+<br>
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tbody><tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top" width="30%">
+            Historia
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridad:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap="">
+                Highest
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Informador:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%">
+                                        
+                
+        
+            <a class="user-hover" rel="61179bdd01072b0069c94a26" id="word_reporter_61179bdd01072b0069c94a26" href="https://upexsprint11.atlassian.net/secure/ViewProfile.jspa?accountId=61179bdd01072b0069c94a26">
+                    Elyer Maldonado
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsable:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap="" width="30%">
+                                        
+                
+        
+            <a class="user-hover" rel="70121:2687a712-2d36-47b2-a4b7-2596c2e9a18f" id="word_assignee_70121:2687a712-2d36-47b2-a4b7-2596c2e9a18f" href="https://upexsprint11.atlassian.net/secure/ViewProfile.jspa?accountId=70121%3A2687a712-2d36-47b2-a4b7-2596c2e9a18f">
+                    CESAR COLON
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolución:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap="">
+            				Sin resolver
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap="">
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Etiquetas:</b>
+        </td>
+        <td id="labels-20065-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap="">
+                            DeployedInQA, Feature                    </td>
+    </tr>
+    
+    	<tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Estimación Restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap="">
+                            0 minutos
+                    </td>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimación Restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap="">
+                            Desconocido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Tiempo empleado:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap="">
+                            4 días, 2 horas
+                    </td>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tiempo Trabajado:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap="">
+                            Desconocido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Estimación original:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap="">
+                            4 días, 5 horas
+                    </td>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimación original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap="">
+                            Desconocido
+            		</td>
+    </tr>
+    
+    </tbody></table>
+
+
+
+    <br>
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tbody><tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Adjuntos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/image.gif" height="16" width="16" border="0" alt="Archivo PNG">
+                    image-20220517-021754.png &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Enlaces de incidencias:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tbody><tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Test</b><br>
+                            </td>
+                        </tr>
+                                                                <tr>
+            <td>
+                is tested by
+            </td>
+            <td>
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-9304">
+                     UPEX-9304                 </a>
+            </td>
+            <td>
+                Collection US 9134 - TX {API} Trello ...
+            </td>
+            <td>
+                READY
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is tested by
+            </td>
+            <td>
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-9305">
+                     <strike>UPEX-9305</strike>                 </a>
+            </td>
+            <td>
+                (Folder 1 POSTMAN) - US 9134 - TS1  (...
+            </td>
+            <td>
+                Close
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is tested by
+            </td>
+            <td>
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-9306">
+                     <strike>UPEX-9306</strike>                 </a>
+            </td>
+            <td>
+                (Folder 2 POSTMAN) - US 9134 - TS2  (...
+            </td>
+            <td>
+                Close
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is tested by
+            </td>
+            <td>
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-9307">
+                     <strike>UPEX-9307</strike>                 </a>
+            </td>
+            <td>
+                (Folder 3 POSTMAN) - US 9134 - TS3  (...
+            </td>
+            <td>
+                Close
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is tested by
+            </td>
+            <td>
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-9308">
+                     <strike>UPEX-9308</strike>                 </a>
+            </td>
+            <td>
+                (Folder 4 POSTMAN) - US 9134 - TS4  (...
+            </td>
+            <td>
+                Close
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is tested by
+            </td>
+            <td>
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-9942">
+                     <strike>UPEX-9942</strike>                 </a>
+            </td>
+            <td>
+                (Folder 5 POSTMAN) - US 9134 - TS5  (...
+            </td>
+            <td>
+                Close
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is tested by
+            </td>
+            <td>
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-10332">
+                     <strike>UPEX-10332</strike>                 </a>
+            </td>
+            <td>
+                US 9134 - TX- {API} Trello | Cards | ...
+            </td>
+            <td>
+                Close
+            </td>
+        </tr>
+                                        </tbody></table>
+            </td>
+        </tr>
+    
+
+
+<tr><td bgcolor="#f0f0f0" width="20%" valign="top"><b>Subtareas:</b></td>
+    <td bgcolor="#ffffff" valign="top">
+        <table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody><tr bgcolor="#f0f0f0">
+                <td>
+                    <b>Clave</b><br>
+                </td>
+                <td>
+                    <b>Resumen</b><br>
+                </td>
+                <td>
+                    <b>Tipo</b><br>
+                </td>
+                <td>
+                    <b>Estado</b><br>
+                </td>
+                <td>
+                    <b>Responsable</b><br>
+                </td>
+            </tr>
+                            <tr>
+                    <td>
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9135">UPEX-9135</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9135">[DevOps] - Deployment a UAT</a>
+                    </td>
+                    <td>
+                        Tarea
+                    </td>
+                    <td>
+                        ACTIVE
+                    </td>
+                    <td>
+                                                     Elyer Maldonado  &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9136">UPEX-9136</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9136">[QA] - Análsis, Diseño y Ejecución de...</a>
+                    </td>
+                    <td>
+                        Tarea
+                    </td>
+                    <td>
+                        Close
+                    </td>
+                    <td>
+                                                     CESAR COLON  &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9137">UPEX-9137</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9137">[DevOps] - Build y Deployment a QA</a>
+                    </td>
+                    <td>
+                        Tarea
+                    </td>
+                    <td>
+                        Close
+                    </td>
+                    <td>
+                                                     Elyer Maldonado  &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9138">UPEX-9138</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9138">[Dev] - Análisis, Implementación y Un...</a>
+                    </td>
+                    <td>
+                        Tarea
+                    </td>
+                    <td>
+                        Close
+                    </td>
+                    <td>
+                                                     Elyer Maldonado  &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9139">UPEX-9139</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://upexsprint11.atlassian.net/browse/UPEX-9139">[UX] - Análisis y Diseño Mockup</a>
+                    </td>
+                    <td>
+                        Tarea
+                    </td>
+                    <td>
+                        Close
+                    </td>
+                    <td>
+                                                     Elyer Maldonado  &nbsp;
+                                            </td>
+                </tr>
+                    </tbody></table>
+    </td>
+</tr>
+
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Epic Link:</b></td>
+                <td id="customfield_10014-20065-value" class="value" bgcolor="#ffffff" width="80%">
+    <a class="aui-label ghx-label-4" href="https://upexsprint11.atlassian.net/browse/UPEX-3143">
+        SUT: Trello (WEB) | SUPER EPIC
+    </a>
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>⛳SCOPE:</b></td>
+                <td id="customfield_10401-20065-value" class="value" bgcolor="#ffffff" width="80%">      <div class="panel" style="background-color: #e3fcef;border-width: 1px;"><div class="panelContent" style="background-color: #e3fcef;">
+<ol>
+	<li>Desarrollar los comportamientos de las Cards dentro de cada Lista de un Tablero.</li>
+</ol>
+</div></div>
+
+<div class="panel" style="background-color: #eae6ff;border-width: 1px;"><div class="panelContent" style="background-color: #eae6ff;">
+<p>*📌👉🏻Para desarrollar Pruebas de Integración en esta súper Historia, es necesario desarrollar un Plan de Pruebas del Nivel Integración* <b>(Level Test Plan), con la finalidad de aclarar la estrategia de prueba usando las API del SUT.</b></p>
+
+<p>(Cuando te encuentras con US demasiado grandes con distintas funcionalidades, siempre es necesario un Feature Test Plan (FTP) para determinar la estrategia de prueba según el componente bajo prueba)</p>
+</div></div>
+
+<div class="panel" style="background-color: #deebff;border-width: 1px;"><div class="panelContent" style="background-color: #deebff;">
+<ol>
+	<li>Para validar las <b>API</b> (en caso de validación full integración), el Scope está en:
+	<ol>
+		<li><b>GET</b>, <b>POST</b>, <b>PUT</b> y <b>DELETE</b><br>
+según la documentación.</li>
+	</ol>
+	</li>
+	<li>No limitarse a usar solo <b>1</b> <b>Query Parameter</b> para la creación y actualización de la <b>Card</b>.</li>
+	<li><b>SE PUEDE REALIZAR VALIDACIÓN:</b>
+	<ol>
+		<li><b>FRONTEND → FRONTEND</b> <font color="#36B37E"><b>[ FULL TESTING MANUAL ]</b></font><br>
+(Validar y Verificar todo usando solo UI Testing)</li>
+		<li><b>FRONTEND → BACKEND</b> <font color="#36B37E"><b>[ TESTING MANUAL + API MANUAL ]</b></font><br>
+(Validar acciones por la UI y Verificar resultados por API con GET)</li>
+		<li><b>BACKEND → BACKEND</b> <font color="#FF991F"><b>[ FULL API AUTOMATION ]</b></font><br>
+(Validar acciones por API con POST, PUT, DELETE, y verificar resultados por API con GET)</li>
+		<li><b>BACKEND → FRONTEND</b> <font color="#36B37E"><b>[ API AUTOMATION + TEST MANUAL ]</b></font><br>
+(Validar acciones por API con POST, PUT, DELETE, y verificar resultados por la UI)</li>
+	</ol>
+	</li>
+</ol>
+
+
+<p><b><em>NOTA PARA QA:</em></b> <br>
+<b><em>En esta US en particular no debería tener un DEFECTO ya que es una funcionalidad muy limpia.</em></b></p>
+</div></div>
+  </td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>🏴‍☠️OOS:</b></td>
+                <td id="customfield_10402-20065-value" class="value" bgcolor="#ffffff" width="80%">      <div class="panel" style="background-color: #fffae6;border-width: 1px;"><div class="panelContent" style="background-color: #fffae6;">
+<ol>
+	<li><b>No desarrollar los comportamientos de las Cards con Power Apps</b></li>
+	<li><b>QA no deberá validar hasta los extremos FUERA del Tablero.</b></li>
+	<li><b>No desarrollar (validar para QA) TODOS los FIELDS a excepción de:</b>
+	<ol>
+		<li>name</li>
+		<li>desc</li>
+		<li>idMembers</li>
+		<li>idList</li>
+		<li>Labels (idLabels)</li>
+		<li>closed</li>
+		<li>Comments</li>
+		<li>Checklist (id, name)</li>
+		<li>checkItems (id, checked)</li>
+		<li>search (idCard)</li>
+	</ol>
+	</li>
+</ol>
+</div></div>
+  </td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>✅ACCEPTANCE CRITERIA:</b></td>
+                <td id="customfield_10201-20065-value" class="value" bgcolor="#ffffff" width="80%">      <h2><a name="Feature%3ACardsdelTablero"></a>Feature: Cards del Tablero</h2>
+
+<h3><a name="Background%3A"></a><b>Background:</b></h3>
+
+<p><font color="#6554c0"><b>Given</b></font><font color="#6554c0"> </font>Usuario tiene acceso a un Tablero de Trello<br>
+<font color="#6554c0"><b>And</b> </font>tiene disponible 3 Listas (Backlog-Active-Done) del Tablero</p>
+
+<h3><a name="Scenario1%28CREATE%29%3AUsuarioCREAunaCardenunaListadelTablero."></a><b>Scenario 1 (CREATE): Usuario CREA una Card en una Lista del Tablero.</b></h3>
+
+<p><font color="#4c9aff"><b>When</b> </font>Usuario hace click sobre el enunciado “<b>Introduzca un título para esta tarjeta</b>”<br>
+<font color="#4c9aff"><b>And</b></font><font color="#4c9aff"> </font>inserta un <b>name</b> a la tarjeta<br>
+<font color="#4c9aff"><b>And</b></font><font color="#4c9aff"> </font>hace click en “<b>Añadir tarjeta</b>” <b>OR</b> presiona “enter”<br>
+<font color="#36b37e"><b>Then</b> </font>la <b>Card es creada</b> exitosamente en la lista donde se ha creado (dentro de la Lista <b>Backlog</b>)<br>
+<font color="#36b37e"><b>And</b> </font>la <b>Card</b> creada se visualiza al final de la lista (<b>bottom</b>)<br>
+<font color="#36b37e"><b>And</b> </font>la <b>Card</b> creada contiene el <b>name</b> introducido exactamente</p>
+
+<p><em>(Si se hace pruebas de API, al momento de crear la Card, no limitarse con crearla solo con un name)</em></p>
+
+<h3><a name="Scenario2%28UPDATE%29%3AUsuarioMODIFICAlainformaci%C3%B3ndeunaCard."></a><b>Scenario 2 (UPDATE): Usuario MODIFICA la información de una Card.</b></h3>
+
+<p><font color="#4c9aff"><b>When</b> </font>Usuario abre una <b>card</b><br>
+<font color="#4c9aff"><b>And</b> </font><b>modifica</b> una <b>información</b> dentro de la misma<br>
+<font color="#4c9aff"><b>And</b></font><font color="#4c9aff"> </font>acepta la confirmación: pudiendo ser ícono “✔” o presionando “Enter”<br>
+<font color="#36b37e"><b>Then</b> </font>Se <b>modifica</b> la tarjeta con los <b>cambios</b> realizados previamente<br>
+<font color="#36b37e"><b>And</b> </font>se visualizan <b>los campos</b> correspondiente de forma apropiada.</p>
+
+<h3><a name="Scenario3%28UPDATE%29%3AUsuarioARRASTRAunaCardaotraLista."></a><b>Scenario 3 (UPDATE): Usuario ARRASTRA una Card a otra Lista.</b></h3>
+
+<p><font color="#4c9aff"><b>When</b> </font>Usuario hace un <b>Drag-and-Drop de una card</b><br>
+<font color="#4c9aff"><b>And</b> </font><b>suelta la</b> <b>card</b> seleccionada sobre otra Lista (<b>Active/Done</b>)<br>
+<font color="#36b37e"><b>Then</b> </font>Se <b>visualiza</b> la misma card seleccionada ahora sobre la lista final</p>
+
+<p>(En este escenario el usuario debería ser capaz de mover la Card más de una vez, sin afectar nada; debe moverse a Active y luego a Done)</p>
+
+<h3><a name="Scenario4%28DELETE%29%3AUsuarioELIMINAunaCard."></a><b>Scenario 4 (DELETE): Usuario ELIMINA una Card.</b></h3>
+
+<p><font color="#4c9aff"><b>When</b> </font>Usuario abre una <b>card</b><br>
+<font color="#4c9aff"><b>And</b></font><font color="#4c9aff"> </font>selecciona la opción “Eliminar” en el panel desplegado (luego del botón Archivar)<br>
+<font color="#36b37e"><b>Then</b> </font>Se <b>elimina</b> (delete) la <b>card</b> presente<br>
+<font color="#36b37e"><b>And</b> </font>la información de la <b>Card</b> no podrá ser localizada en el <b>Workspace</b></p>
+  </td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sprint:</b></td>
+                <td id="customfield_10020-20065-value" class="value" bgcolor="#ffffff" width="80%">SPRINT 7 BackUp</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>🎲Story Points:</b></td>
+                <td id="customfield_10028-20065-value" class="value" bgcolor="#ffffff" width="80%">    21
+</td>
+            </tr>
+                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>🧬WORKFLOW:</b></td>
+                <td id="customfield_10500-20065-value" class="value" bgcolor="#ffffff" width="80%">      <h1><a name="C.R.U.DenAPIREST"></a><b>C.R.U.D en API REST</b></h1>
+
+<ul>
+	<li><b>CREATE</b>
+	<ul>
+		<li>POST</li>
+	</ul>
+	</li>
+	<li><b>READ</b>
+	<ul>
+		<li>GET</li>
+	</ul>
+	</li>
+	<li><b>UPDATE</b>
+	<ul>
+		<li>PUT</li>
+	</ul>
+	</li>
+	<li><b>DELETE</b>
+	<ul>
+		<li>DELETE</li>
+	</ul>
+	</li>
+</ul>
+
+
+<p><b>Usar GET en cada acción para validar las acciones sobre el Frontend o el Backend</b></p>
+  </td>
+            </tr>
+                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>🎴MOCKUP:</b></td>
+                <td id="customfield_10400-20065-value" class="value" bgcolor="#ffffff" width="80%">      <p><span class="image-wrap" style=""><img src="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/image-20220517-021754.png" width="100%" style="border: 0px solid black"></span></p>
+  </td>
+            </tr>
+                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>🚩BUSINESS RULES SPEC:</b></td>
+                <td id="customfield_10202-20065-value" class="value" bgcolor="#ffffff" width="80%">      <p>EN CASO DE USAR LAS API DE TRELLO PARA EL DESARROLLO DE ESTA HISTORIA DE USUARIO, SIGAN LAS PAUTAS DE LA ÉPICA DE LA “EPIC FEATURE”:</p>
+
+
+
+<p><a href="https://upexsprint5.atlassian.net/browse/UPEX-3143" title="smart-card" class="external-link" rel="nofollow noreferrer">https://upexsprint5.atlassian.net/browse/UPEX-3143</a></p>
+
+
+
+<p>PARA MÁS INFORMACIÓN SOBRE CÓMO USAR LA API DE TRELLO:</p>
+
+
+<p><a href="https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post" title="smart-card" class="external-link" rel="nofollow noreferrer">https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post</a></p>
+
+
+  </td>
+            </tr>
+            </tbody></table>
+
+    <br>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tbody><tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap="" align="center">
+            &nbsp;<font color="#ffffff"><b>Descripción</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </tbody></table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tbody><tr>
+        <td id="descriptionArea">
+            <div class="panel" style="background-color: #eae6ff;border-width: 1px;"><div class="panelContent" style="background-color: #eae6ff;">
+<p><b>Como</b> usuario de Trello logueado</p>
+
+<p><b>Quiero</b> crear/modificar/mover/borrar Cards (tarjetas) en las diferentes Listas de un Tablero</p>
+
+<p><b>Para</b> organizar mis ideas</p>
+</div></div>
+
+<div class="panel" style="background-color: #deebff;border-width: 1px;"><div class="panelContent" style="background-color: #deebff;">
+<p><b>EN ESTA HISTORIA DE USUARIO, SE PUEDE TRABAJAR TANTO A NIVEL FRONTEND COMO BACKEND (con las API de Trello)</b></p>
+</div></div>
+
+<div class="panel" style="background-color: #fffae6;border-width: 1px;"><div class="panelContent" style="background-color: #fffae6;">
+<p><em>PARA LA COMUNIDAD: SI QUIERES TRABAJAR EN ESTA US, SOLICÍTALA EN EL CANAL DE upex-bootcamp</em> 😉 <em>en Slack</em></p>
+</div></div>
+            <br>
+        </td>
+    </tr>
+    </tbody></table>
+
+    <br>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tbody><tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap="" align="center">
+            &nbsp;<font color="#ffffff"><b>Comentarios</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </tbody></table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="grid" style="margin: 0;">
+                <tbody><tr id="comment-header-12329"><td bgcolor="#f0f0f0">
+              Comentado por
+                                                    
+                
+        
+            <a class="user-hover" rel="557058:f58131cb-b67d-43c7-b30d-6b58d40bd077" id="word_commented_557058:f58131cb-b67d-43c7-b30d-6b58d40bd077" href="https://upexsprint11.atlassian.net/secure/ViewProfile.jspa?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077">
+                    Automation for Jira
+                </a>
+
+                                        <font size="-2">
+            [
+                <font color="#336699">23/jun/22</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-12329"><td bgcolor="#ffffff">
+            <p>Hola, CESAR COLON!✨<br>
+Espero que te encante trabajar aquí en el <b>Workspace de UPEX</b>!🚀</p>
+
+<p>Esta <b>Feature</b> ha sido <b>deployada</b> al Ambiente <b>QA</b> en el presente <b>Sprint</b>.<br>
+Ahora, luego de haber estimado esta <b>User Story</b> en el <b>Sprint Planning</b>, <br>
+<b>has sido asignado a esta US por el Equipo de Desarrollo</b>, para proceder con la Actividad de Testing correspondiente.<br>
+Estamos confiados de que gracias a tus habilidades y conocimientos, podrás cumplir con la consigna!</p>
+
+<p>🚩Recuerda leer la documentación en <b>Confluence</b> sobre el "Paso a Paso" de la Actividad QA en este proyecto!<br>
+<a href="https://upexsprint6.atlassian.net/wiki/spaces/UPEX/pages/328083" class="external-link" rel="nofollow noreferrer">El PASO A PASO LUEGO DE ASIGNACIÓN DE USER STORY</a></p>
+
+<p>🔍También, si quieres, echa un vistazo a nuestro <b>Plan de Pruebas</b> para que estés enterado de la estrategia del Proyecto:<br>
+
+    <span class="jira-issue-macro" data-jira-key="UPEX-46">
+                <a href="https://upexsprint11.atlassian.net/browse/UPEX-46" class="jira-issue-macro-key issue-link" title="QA TEST PLAN - UPEX SUT - Releases">
+            <img class="icon" src="./[#UPEX-9134] [Cesar] - US {API} Trello _ Cards _ Crear, Modificar, Mover y Eliminar Tarjetas de un Tablero_files/10607">
+            UPEX-46
+        </a>
+                                                    <span class="aui-lozenge aui-lozenge-subtle aui-lozenge-current jira-macro-single-issue-export-pdf">Planning</span>
+            </span>
+ </p>
+
+<p>Saludos! y Happy Testing!</p>
+
+<p>Atte. <br>
+<b>Elyer Maldonado</b><br>
+<b>QA Manager / Test Team Lead</b>.</p>
+        </td></tr>
+                <tr id="comment-header-12532"><td bgcolor="#f0f0f0">
+              Comentado por
+                                                    
+                
+        
+            <a class="user-hover" rel="70121:2687a712-2d36-47b2-a4b7-2596c2e9a18f" id="word_commented_70121:2687a712-2d36-47b2-a4b7-2596c2e9a18f" href="https://upexsprint11.atlassian.net/secure/ViewProfile.jspa?accountId=70121%3A2687a712-2d36-47b2-a4b7-2596c2e9a18f">
+                    CESAR COLON
+                </a>
+
+                                        <font size="-2">
+            [
+                <font color="#336699">03/jul/22</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-12532"><td bgcolor="#ffffff">
+            <p>Hola Gente, ante todo buenas noches y muchas gracias por tomarse el tiempo para revisar esta historia de usuario. Agradeceré su gran feedback. Estamos en contacto. Un gran abrazo.</p>
+
+
+
+<p>Consideraciones en el desarrollo de la US</p>
+
+
+
+<p>Suponiendo que no se puede modificar la US que se deploya en el ambiente QA de UPEX - BOOTCAMP; se realizarán ciertos ajustes evidenciados en el Plan de Pruebas. Sin más que decir se aclara lo siguiente:</p>
+
+
+
+<ul>
+	<li><b>Se separará intencionalmente las funcionalidades de "Eliminar" y " Modificar" una Card de manera de mitigar la incertidumbre que pueda existir en el derivación de los casos de Prueba.</b> Esto acarreará asignar un AC para cada una estas funcionalidades por separado.</li>
+	<li><b>El foco de la US se desarrollará en base a Full Automation (Backend- Backend),</b> de manera que a la herramienta POSTMAN se le saque el máximo provecho. Sin embargo se dejará evidenciado algunos escenarios de un acciones de Manual Testing también.</li>
+	<li>De haber realizado la pruebas completamente Full Manual Testing (Frontend - Frontend) hubiera decidido fragmentar aún mas los criterios de aceptación, más otras consideraciones, para mayor entendimiento y sobre todo una mejor derivación de casos de pruebas.</li>
+	<li><b>No será necesario aplicar Técnicas de Testing (BBTT) para esta US.</b> Si de repente puede llegar a ser recomendado para una mayor cobertura, no aplicaría en este caso, porque si se fragmenta individualmente cada una de las funcionalidades, con un simple análisis se puede evidenciar que conllevan a un mismo resultado esperado del comportamiento, ejemplo, se crea o no se crea la Card, se elimina o no se elimina, etc. Recordamos que el foco de esta US es la Automatización. No la exhaustividad de la misma.</li>
+</ul>
+
+
+<p>Saludos</p>
+        </td></tr>
+            </tbody></table>
+Generado a las Tue Sep 20 15:57:06 UTC 2022 por CESAR COLON usando JIRA 1001.0.0-SNAPSHOT#100207-sha1:866f7d807b87db925c6995b100a08f84275ff0a3.
+
+
+<script src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/js.js"></script></body></html>
