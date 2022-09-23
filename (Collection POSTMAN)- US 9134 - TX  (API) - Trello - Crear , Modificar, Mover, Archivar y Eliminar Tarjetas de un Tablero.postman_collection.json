@@ -1,0 +1,966 @@
+{
+	"info": {
+		"_postman_id": "45a88094-7760-48a7-b8e7-8c1f655a9623",
+		"name": "(Collection POSTMAN): US 9134 - TX  (API) - Trello - Crear , Modificar, Mover, Archivar y Eliminar Tarjetas de un Tablero",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21414356"
+	},
+	"item": [
+		{
+			"name": "(Folder 1 POSTMAN): US 9134 - TS1  (API) - Trello - Crear Tarjetas de un Tablero",
+			"item": [
+				{
+					"name": "Precon: La lista de Backlog debe estar disponible en el Tablero",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Precondicion: Lista BACKLOG existente\",()=>{\r",
+									"pm.response.to.have.status (200)\r",
+									"})\r",
+									"\r",
+									"const body = pm.response.json()\r",
+									"pm.test(\"La Lista si corresponde al nombre BACKLOG\",()=>\r",
+									"    pm.expect(body.name).to.include(\"BACKLOG\")\r",
+									")\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GETList}}/:id?key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{GETList}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{ListA}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Precon: La lista de Active debe estar disponible en el Tablero",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Precondicion: Lista ACTIVE existente\",()=>{\r",
+									"pm.response.to.have.status (200)\r",
+									"})\r",
+									"\r",
+									"const body = pm.response.json()\r",
+									"pm.test(\"La Lista si corresponde al nombre ACTIVE\",()=>\r",
+									"    pm.expect(body.name).to.include(\"ACTIVE\")\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GETList}}/:id?key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{GETList}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{ListB}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Precon: La lista de Done debe estar disponible en el Tablero",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Precondicion: Lista DONE existente\",()=>{\r",
+									"pm.response.to.have.status (200)\r",
+									"})\r",
+									"\r",
+									"const body = pm.response.json()\r",
+									"pm.test(\"La Lista si corresponde al nombre DONE\",()=>\r",
+									"    pm.expect(body.name).to.include(\"DONE\")\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GETList}}/:id?key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{GETList}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{ListC}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TS1 - TC01 - Validar CREAR crear una Card A en la lista Backlog del tablero de Trello API POSTMAN (Full data/inputs)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const randomName = pm.variables.replaceIn(\"{{$randomBankAccountName}}\")\r",
+									"pm.collectionVariables.set(\"cardrandomName\", randomName)\r",
+									"//pm.variables.get(\"$randomBankAccountName\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Debería estar la creacion de la Card en la Lista BACKLOG\",()=>\r",
+									"    pm.expect(body.idList).to.eql(pm.environment.get(\"ListA\"))\r",
+									")\r",
+									"pm.test(\"Nombre de la Card debería ser igual al ingresado previamente\",()=>\r",
+									"    pm.expect(body.name).to.eql(pm.collectionVariables.get(\"cardrandomName\"))\r",
+									")\r",
+									"\r",
+									"const idCardA = body.id\r",
+									"pm.collectionVariables.set(\"idCardAA\", idCardA)\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{POSTCard}}?idList={{ListA}}&name={{cardrandomName}}&key={{KEY}}&token={{TOKEN}}&desc=Información y mucho más detalles sobre la tarjeta...&due=02.07.2022&urlSource=https://developer.atlassian.com/cloud/trello/rest/api-group-cards/%23api-cards-post&address=Argentina",
+							"host": [
+								"{{POSTCard}}"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{ListA}}"
+								},
+								{
+									"key": "name",
+									"value": "{{cardrandomName}}"
+								},
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								},
+								{
+									"key": "desc",
+									"value": "Información y mucho más detalles sobre la tarjeta..."
+								},
+								{
+									"key": "due",
+									"value": "02.07.2022"
+								},
+								{
+									"key": "urlSource",
+									"value": "https://developer.atlassian.com/cloud/trello/rest/api-group-cards/%23api-cards-post"
+								},
+								{
+									"key": "address",
+									"value": "Argentina"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TS1 - TC02 - Intentar validar CREAR una Card B en la lista Active del tablero de Trello (con todos los datos/inputs Null)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const randomName = pm.variables.replaceIn(\"{{$randomBankAccountName}}\")\r",
+									"pm.collectionVariables.set(\"cardrandomName\", randomName)\r",
+									"//pm.variables.get(\"$randomBankAccountName\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Debería estar la creacion de la Card en la Lista ACTIVE\",()=>\r",
+									"    pm.response.to.have.status(200),\r",
+									"    pm.expect(body.idList).to.eql(pm.environment.get(\"ListB\"))\r",
+									")\r",
+									"pm.test(\"Nombre de la Card debería ser igual al ingresado previamente\",()=>\r",
+									"    pm.expect(body.name).to.eql(pm.collectionVariables.get(\"cardrandomName\"))\r",
+									")\r",
+									"const idTarjeta = body.id\r",
+									"pm.collectionVariables.set(\"idTarjetaB\", idTarjeta)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{POSTCard}}?idList={{ListB}}&name={{cardrandomName}}&key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{POSTCard}}"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{ListB}}"
+								},
+								{
+									"key": "name",
+									"value": "{{cardrandomName}}"
+								},
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TS1 - TC03 - Validar CREAR una Card C en la lista Backlog del tablero de Trello (con algunos datos/inputs y etiquetas)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const randomName = pm.variables.replaceIn(\"{{$randomBankAccountName}}\")\r",
+									"pm.collectionVariables.set(\"cardrandomName\", randomName)\r",
+									"//pm.variables.get(\"$randomBankAccountName\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Debería estar la creacion de la Card en la Lista BACKLOG\",()=>\r",
+									"    pm.response.to.have.status(200),\r",
+									"    pm.expect(body.idList).to.eql(pm.environment.get(\"ListA\"))\r",
+									")\r",
+									"pm.test(\"Nombre de la Card debería ser igual al ingresado previamente\",()=>\r",
+									"    pm.expect(body.name).to.eql(pm.collectionVariables.get(\"cardrandomName\"))\r",
+									")\r",
+									"const idCardC = body.id\r",
+									"pm.collectionVariables.set(\"idCardCC\", idCardC)\r",
+									"\r",
+									"console.log(idCardC)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{POSTCard}}?idList={{ListA}}&name={{cardrandomName}}&key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{POSTCard}}"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{ListA}}"
+								},
+								{
+									"key": "name",
+									"value": "{{cardrandomName}}"
+								},
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(Folder 2 POSTMAN): US 9134 - TS2  (API) - Trello - Modificar Tarjetas de un Tablero",
+			"item": [
+				{
+					"name": "TS2 - TC04 - Validar MODIFICAR la Card B de la lista Active del tablero de Trello (con algunos datos/inputs nuevos y actualizados)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const modificateRandomName = pm.variables.replaceIn(\"{{$randomCurrencyName}}\")\r",
+									"pm.collectionVariables.set(\"cardModficaterandomName\", modificateRandomName)\r",
+									"\r",
+									"const modificateRandomDesc = pm.variables.replaceIn(\"{{$randomLoremParagraph}}\")\r",
+									"pm.collectionVariables.set(\"cardModficaterandomDesc\", modificateRandomDesc)\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"\r",
+									"const NewNameRandom = pm.collectionVariables.get(\"cardModficaterandomName\")\r",
+									"pm.test(\"el Nombre si se modifico\",()=>\r",
+									"    pm.expect(body.name).to.eql(NewNameRandom)\r",
+									")\r",
+									"const modificateRandomDesc= pm.collectionVariables.get(\"cardModficaterandomDesc\")\r",
+									"pm.test(\"Se actualizo la Descripicion\",()=>\r",
+									"    pm.expect(body.desc).to.eql(modificateRandomDesc)\r",
+									")\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{PUTCard}}/:id?key={{KEY}}&token={{TOKEN}}&name={{cardModficaterandomName}}&desc={{cardModficaterandomDesc}}&closed=false&idLabels={{LabelOrangeUpdate}}",
+							"host": [
+								"{{PUTCard}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								},
+								{
+									"key": "name",
+									"value": "{{cardModficaterandomName}}"
+								},
+								{
+									"key": "desc",
+									"value": "{{cardModficaterandomDesc}}"
+								},
+								{
+									"key": "closed",
+									"value": "false"
+								},
+								{
+									"key": "idLabels",
+									"value": "{{LabelOrangeUpdate}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idTarjetaB}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(Folder 3 POSTMAN): US 9134 - TS3  (API) - Trello - Mover Tarjetas de un Tablero",
+			"item": [
+				{
+					"name": "TS3 - TC05 - Validar MOVER la Card A de la lista Backlog a la lista Active",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"const idListB = pm.environment.get(\"ListB\")\r",
+									"pm.test(\"Se movio a la Lista ACTIVE\", ()=>\r",
+									"    pm.expect(body.idList).to.eql(idListB)\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{PUTCard}}/:id?key={{KEY}}&token={{TOKEN}}&idList={{ListB}}",
+							"host": [
+								"{{PUTCard}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								},
+								{
+									"key": "idList",
+									"value": "{{ListB}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCardAA}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TS3 - TC06 - Validar MOVER la Card C de la lista Backlog a la lista Done (Posiciones top/bottom)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"\r",
+									"const idListC = pm.environment.get(\"ListC\")\r",
+									"pm.test(\"Se movio a la Lista DONE\", ()=>\r",
+									"    pm.expect(body.idList).to.eql(idListC)\r",
+									")\r",
+									"\r",
+									"const idCardC = body.id\r",
+									"pm.collectionVariables.set(\"idCardCC\", idCardC)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{PUTCard}}/:id?key={{KEY}}&token={{TOKEN}}&idList={{ListC}}",
+							"host": [
+								"{{PUTCard}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								},
+								{
+									"key": "idList",
+									"value": "{{ListC}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCardCC}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(Folder 4 POSTMAN): US 9134 - TS4  (API) - Trello -Archivar Tarjetas de un Tablero",
+			"item": [
+				{
+					"name": "Validar ARCHIVAR la Card B modificada del tablero de Trello API POSTMAN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"const archivado = body.closed\r",
+									"pm.test(\"Si se archivo la tarjeta\", ()=>\r",
+									"    pm.expect(archivado).to.eql(true)\r",
+									")\r",
+									"    pm.test(\"La Tarjeta no se ve en el Tablero pero si esta en el Workspace\", ()=>\r",
+									"        pm.response.to.have.status(200)\r",
+									"    )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{PUTCard}}/:id?key={{KEY}}&token={{TOKEN}}&closed=true",
+							"host": [
+								"{{PUTCard}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								},
+								{
+									"key": "closed",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idTarjetaB}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TS4 - TC08 - Comprobar el ARCHIVADO correcto de la Card B en el workspace que ha sido archivada previamente en el tablero de Trello",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"La Tarjeta NO esta en el Tablero pero SI en el Workspace\", ()=>\r",
+									"        pm.response.to.have.status(200)\r",
+									"    )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GETCard}}/:id?key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{GETCard}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idTarjetaB}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TS4 - TC09 - Validar ENVIAR AL TABLERO (Desarchivar) la Card B a la lista Active del tablero de Trello.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()\r",
+									"const archivado = body.closed\r",
+									"pm.test(\"Si se envio al tablero la Tarjeta\", ()=>\r",
+									"    pm.expect(archivado).to.eql(false)\r",
+									")\r",
+									"\r",
+									"const ListB = body.idList\r",
+									"pm.test(\"La Card volvió a la misma Lista donde estaba previamente\", ()=>\r",
+									"    pm.environment.get(ListB)\r",
+									"\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{PUTCard}}/:id?key={{KEY}}&token={{TOKEN}}&closed=false",
+							"host": [
+								"{{PUTCard}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								},
+								{
+									"key": "closed",
+									"value": "false"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idTarjetaB}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(Folder 5 POSTMAN): US 9134 - TS5  (API) - Trello -Eliminar Tarjetas de un Tablero",
+			"item": [
+				{
+					"name": "TS5 - TC10 - Validar Eliminar la Card C de la lista Done del tablero de Trello",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"La Card si existe en el Tablero antes de elminarse\", ()=>\r",
+									"    pm.response.to.have.status(200)\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{DELCard}}/:id?key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{DELCard}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCardCC}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TS5 - TC11 - Comprobar la ELIMINACIÓN total en el workspace de la Card C que ha sido eliminada previamente en una lista de tablero de Trello.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Se Elimino la Card de Tablero y del Workspace\", ()=>\r",
+									"    pm.response.to.have.status(404)\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GETList}}/:id?key={{KEY}}&token={{TOKEN}}",
+							"host": [
+								"{{GETList}}"
+							],
+							"path": [
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{KEY}}"
+								},
+								{
+									"key": "token",
+									"value": "{{TOKEN}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCardCC}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PushintIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "pushingit",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pushing-it-backend.herokuapp.com/api/login?username=pushingit&password=123456!",
+							"protocol": "https",
+							"host": [
+								"pushing-it-backend",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "pushingit"
+								},
+								{
+									"key": "password",
+									"value": "123456!"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "cardrandomName",
+			"value": ""
+		},
+		{
+			"key": "idCardA",
+			"value": ""
+		},
+		{
+			"key": "cardrandomDesc",
+			"value": ""
+		},
+		{
+			"key": "cardModficaterandomName",
+			"value": ""
+		},
+		{
+			"key": "idCardB",
+			"value": ""
+		},
+		{
+			"key": "idTarjetaA",
+			"value": ""
+		},
+		{
+			"key": "cardModficaterandomDesc",
+			"value": ""
+		},
+		{
+			"key": "idTarjetaB",
+			"value": ""
+		},
+		{
+			"key": "idCardAA",
+			"value": ""
+		},
+		{
+			"key": "idCardCC",
+			"value": ""
+		},
+		{
+			"key": "LabelUPDATE",
+			"value": "62b478722d2ecec500da8600"
+		}
+	]
+}
